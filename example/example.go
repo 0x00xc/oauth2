@@ -3,7 +3,7 @@ package example
 import (
 	"encoding/json"
 	"fmt"
-	"github.com/0x00xc/oauth2"
+	"github.com/cro4k/oauth2"
 	"io"
 	"net/http"
 	"net/url"

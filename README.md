@@ -4,7 +4,7 @@ golang oauth2 server，OAuth2 非标准实现
 ```go
 package main
 
-import "github.com/0x00xc/oauth2"
+import "github.com/cro4k/oauth2"
 
 func main(){
     ex := example.NewExample()

@@ -88,6 +88,7 @@ func (s *Server) AuthorizeFromRequest(r *http.Request, sessionId string) (*Autho
 	return s.Authorize(req, sessionId)
 }
 
+// Authorize
 //request 授权请求参数
 //sessionId 当前用户识别标识，可以是用户id也可以是其他
 //每次生成授权码（grant_code）时，会将 grant_code 与 sessionId 关联保存，确认授权时，会读取出 sessionId 返回给业务端，

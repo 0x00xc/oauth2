@@ -1,3 +1,3 @@
-module github.com/0x00xc/oauth2
+module github.com/cro4k/oauth2
 
 go 1.16
