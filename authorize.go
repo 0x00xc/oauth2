@@ -89,10 +89,10 @@ func (s *Server) AuthorizeFromRequest(r *http.Request, sessionId string) (*Autho
 }
 
 // Authorize
-//request 授权请求参数
-//sessionId 当前用户识别标识，可以是用户id也可以是其他
-//每次生成授权码（grant_code）时，会将 grant_code 与 sessionId 关联保存，确认授权时，会读取出 sessionId 返回给业务端，
-//业务端自行决定 sessionId 用途（一般用作用户标识）
+// request 授权请求参数
+// sessionId 当前用户识别标识，可以是用户id也可以是其他
+// 每次生成授权码（grant_code）时，会将 grant_code 与 sessionId 关联保存，确认授权时，会读取出 sessionId 返回给业务端，
+// 业务端自行决定 sessionId 用途（一般用作用户标识）
 func (s *Server) Authorize(request *AuthorizeRequest, sessionId string) (*AuthorizeResponse, error) {
 	client, err := s.storage.GetClient(request.ClientId)
 	if err != nil {
