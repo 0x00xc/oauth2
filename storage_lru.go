@@ -28,5 +28,5 @@ func (c *lru) Del(k string) error {
 }
 
 func NewLRUStorage(max int) KVStorage {
-	return cache.NewLRUCache(max)
+	return &lru{cache: cache.NewLRUCache(max)}
 }
