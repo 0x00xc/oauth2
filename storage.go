@@ -51,10 +51,10 @@ type SimpleStorage struct {
 	grantInfo    KVStorage
 	refreshToken KVStorage
 
-	getClient func(id string) (*SimpleClient, error)
+	getClient func(id string) (Client, error)
 }
 
-func NewSimpleStorage(getClient func(id string) (*SimpleClient, error)) *SimpleStorage {
+func NewSimpleStorage(getClient func(id string) (Client, error)) *SimpleStorage {
 	return &SimpleStorage{
 		clients:      NewSyncMap(),
 		grantCodes:   NewSyncMap(),
@@ -64,7 +64,7 @@ func NewSimpleStorage(getClient func(id string) (*SimpleClient, error)) *SimpleS
 	}
 }
 
-func NewSimpleKVStorage(getClient func(id string) (*SimpleClient, error), newKVStorage func() KVStorage) *SimpleStorage {
+func NewSimpleKVStorage(getClient func(id string) (Client, error), newKVStorage func() KVStorage) *SimpleStorage {
 	return &SimpleStorage{
 		clients:      newKVStorage(),
 		grantCodes:   newKVStorage(),
